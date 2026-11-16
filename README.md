@@ -62,6 +62,24 @@ bash examples/verify_wheel.sh /tmp/installed "$PWD"
 
 The current suite has 37 Python and fourteen Node/actual-Chrome tests. The installed wheel imports all ten modules including the package root and exercises eight main CLI commands plus two single-row module commands outside checkout, including all eleven fresh fits and complete saved/fresh fit audits. The browser exporter does not fit. Bounded per-candidate JSON artifacts reconstruct the full report without rounding. The original source CSV is retained byte-for-byte with a checked SHA256.
 
+Run `python examples/check_installed.py` after installing NumPy 2.2.6,
+setuptools and wheel for the full installed suite. It builds a wheel, installs
+it in a new environment and runs all 37 existing Python tests outside the
+checkout, checking ten installed module origins before and after. Copied
+tests, figure code, static files and data-only archive directories do not
+include the library's Python source. Exact ridge references, fresh fits,
+test-label poisoning, row-deletion controls and figure reproduction remain
+part of that suite.
+
+The helper compares eleven complete JSON reports: all eight main commands,
+including saved and fresh audits, plus the two single-row module commands.
+It also compares the complete fresh eleven-model report and all 576 generated
+single-row references. These are source/wheel replay checks in the same
+runtime, not independent numerical or recommendation-quality evidence. The
+existing tolerance-based reference checks and original wheel smoke job stay
+in place; CI runs the full installed suite as a separate job.
+
+
 ## Interpretation and limits
 
 The observed edge split is not chronological or a new-user/new-item test. All held-out entities happen to be warm; zero-factor cold fallback is only checked in a supplied synthetic control. An index lookup is not a learned cold-start preference model.
