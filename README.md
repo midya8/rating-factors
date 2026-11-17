@@ -1,6 +1,6 @@
 # Rating factors
 
-RatingLab fits explicit ratings with NumPy alternating ridge solves. Only
+This implementation fits explicit ratings with NumPy alternating ridge solves. Only
 observed user/item pairs enter the loss; zero is a real rating, not a missing
 value. The browser shows score terms, normal equations, objective histories
 and coordinate rotations.
