@@ -1,6 +1,6 @@
 # Conditional finite response, not full retraining
 
-Version 0.2 adds a separate [live inspector](https://midya8.github.io/ratinglab/influence.html). It changes no original fit, split, metric, source rating, original score-inference code or original figure.
+Version 0.2 adds a separate [live inspector](https://midya8.github.io/rating-factors/influence.html). It changes no original fit, split, metric, source rating, original score-inference code or original figure.
 
 ## The claim is deliberately conditional
 
@@ -61,8 +61,8 @@ This covers rank-deficient designs and removal of a block's only row. The latter
 
     python -m unittest discover -s tests -v
     node --test tests/*.cjs
-    python -m ratinglab.influence demo
-    python -m ratinglab.influence references --output /tmp/influence-reference.json
+    python -m Rating factors.influence demo
+    python -m Rating factors.influence references --output /tmp/influence-reference.json
 
 The latter writes explicitly requested reproduction output; the demo is read-only. `block_response` requires a training source-row ID belonging to its chosen block, known integer entity indices, finite deltas and exclusive edit/delete operations. Module commands do not accept arbitrary remote content or invoke an external API.
 
