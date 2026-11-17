@@ -1,4 +1,4 @@
-# RatingLab
+# Rating factors
 
 RatingLab fits explicit ratings with NumPy alternating ridge solves. Only
 observed user/item pairs enter the loss; zero is a real rating, not a missing
@@ -100,7 +100,7 @@ Neither conditional calculation is full-model retraining or data unlearning.
 
 ## v0.2: single-row conditional response
 
-[Conditional edit/deletion inspector](https://midya8.github.io/ratinglab/influence.html) · [Derivation and limits](INFLUENCE.md)
+[Conditional edit/deletion inspector](https://midya8.github.io/rating-factors/influence.html) · [Derivation and limits](INFLUENCE.md)
 
 Change or remove one training rating with the mean, penalty and every opposite-side bias/factor frozen. The browser separates the original saved score, a fresh unmodified conditional baseline and the changed conditional score. A target edit has a finite linear response; a row deletion uses its residual and Sherman-Morrison denominator. The saved user block may move on re-solving even before the edit, so that movement stays separate.
 
@@ -110,4 +110,4 @@ This is not full-model leave-one-out cross-validation or unlearning: frozen oppo
 
 ## Joint conditional batches, v0.3.0
 
-[Open the batch inspector](https://midya8.github.io/ratinglab/batch.html) or read [BATCH.md](BATCH.md). Select multiple original training rows in one frozen user/item ridge block. Finite target edits add; joint deletions solve a coupled Schur system and generally differ from a sum of separate-original-baseline deletions. Empty/full/single cases, conservative positivity bound, condition refusal, saved-versus-re-solved baseline, independent rational/direct least-squares checks and source-bound JSON stay visible. This is not full ALS retraining, causal influence, cross-validation or data unlearning. Original fits, splits and metrics are unchanged.
+[Open the batch inspector](https://midya8.github.io/rating-factors/batch.html) or read [BATCH.md](BATCH.md). Select multiple original training rows in one frozen user/item ridge block. Finite target edits add; joint deletions solve a coupled Schur system and generally differ from a sum of separate-original-baseline deletions. Empty/full/single cases, conservative positivity bound, condition refusal, saved-versus-re-solved baseline, independent rational/direct least-squares checks and source-bound JSON stay visible. This is not full ALS retraining, causal influence, cross-validation or data unlearning. Original fits, splits and metrics are unchanged.
